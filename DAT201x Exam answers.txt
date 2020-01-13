@@ -1,0 +1,21 @@
+Exam 3
+Q1
+
+SELECT p.ProductName, p.UnitPrice
+FROM dbo.products AS p
+
+WHERE p.UnitPrice > (SELECT AVG(ord.UnitPrice) FROM DBO.[ORDER DETAILS] AS ord) 
+ORDER BY ProductID;
+
+Q3
+
+CREATE TABLE #ProductNames 
+(ProductName VARCHAR(40)); 
+
+
+INSERT INTO #ProductNames
+
+SELECT ProductName FROM Products;
+
+
+SELECT * FROM #ProductNames;
